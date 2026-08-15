@@ -92,6 +92,7 @@
         --pink: #ec4899;
         --lilac-100: #ede7ff;
         --lilac-300: #c9b8ff;
+        --lilac-500: #825ff5;
         --paper: #faf8ff;
         --white: #ffffff;
         --line: rgba(237, 231, 255, 0.14);
@@ -376,7 +377,7 @@
         margin-top: 20px;
         font-size: 18px;
         color: var(--lilac-300);
-        max-width: 480px;
+        max-width: 640px;
       }
       .hero-sub em {
         font-style: normal;
@@ -452,16 +453,36 @@
       .constellation {
         position: relative;
         aspect-ratio: 1/1;
-        max-width: 300px;
+        max-width: 440px;
         margin: 0 auto;
-      }
-      .constellation svg {
         width: 100%;
-        height: 100%;
       }
+      .constellation::before {
+        content: "";
+        position: absolute;
+        inset: -18%;
+        z-index: -1;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.32),
+          transparent 68%
+        );
+        filter: blur(24px);
+      }
+      @media (max-width: 960px) {
+        .constellation {
+          max-width: 280px;
+        }
+      }
+
       .node {
-        animation: pulse 3.2s ease-in-out infinite;
         transform-origin: center;
+      }
+      .node-uni {
+        animation: pulseBig 3.4s ease-in-out infinite;
+      }
+      .node-hub {
+        animation: pulseSmall 3.2s ease-in-out infinite;
       }
       .node.d1 {
         animation-delay: 0.2s;
@@ -478,15 +499,26 @@
       .node.d5 {
         animation-delay: 1.9s;
       }
-      @keyframes pulse {
+      @keyframes pulseBig {
         0%,
         100% {
-          opacity: 0.55;
-          r: 5;
+          opacity: 0.65;
+          r: 11;
         }
         50% {
           opacity: 1;
-          r: 7.5;
+          r: 14;
+        }
+      }
+      @keyframes pulseSmall {
+        0%,
+        100% {
+          opacity: 0.5;
+          r: 6;
+        }
+        50% {
+          opacity: 1;
+          r: 8.5;
         }
       }
       .link-line {
@@ -496,11 +528,6 @@
       @keyframes dash {
         to {
           stroke-dashoffset: -400;
-        }
-      }
-      @media (max-width: 960px) {
-        .constellation {
-          max-width: 220px;
         }
       }
 
@@ -1085,7 +1112,6 @@
       }
       .footer-inner h4 {
         font-family: var(--font-display);
-        color: #fff;
         font-size: 14px;
         margin: 0 0 14px;
       }
@@ -1104,7 +1130,7 @@
         word-break: break-word;
       }
       .footer-inner a:hover {
-        color: #fff;
+        color: var(--lilac-500);
       }
       .footer-bottom {
         max-width: var(--max-w);
@@ -1167,7 +1193,9 @@
           <li><a href="#sponsors">Sponsors</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
-        <a href="#register" class="nav-cta">Register interest</a>
+        <a href="https://forms.gle/8pEE5QtPyJivaHe67" class="nav-cta"
+          >Register interest</a
+        >
         <button class="nav-toggle" id="menuOpen" aria-label="Open menu">
           ☰
         </button>
@@ -1183,7 +1211,7 @@
       <a href="#faq">FAQ</a>
       <a href="#sponsors">Sponsors</a>
       <a href="#location">Location</a>
-      <a href="#register">Register interest</a>
+      <a href="https://forms.gle/8pEE5QtPyJivaHe67">Register interest</a>
     </div>
 
     <main id="top">
@@ -1204,7 +1232,11 @@
               societies.
             </p>
             <div class="hero-actions">
-              <a href="#register" class="btn btn-primary">Register interest</a>
+              <a
+                href="https://forms.gle/8pEE5QtPyJivaHe67"
+                class="btn btn-primary"
+                >Register interest</a
+              >
               <a href="#about" class="btn btn-ghost">What is IKU?</a>
             </div>
             <div class="hero-meta">
@@ -1220,7 +1252,11 @@
             </div>
           </div>
 
-          <div class="constellation" aria-hidden="true">
+          <div
+            class="constellation"
+            role="img"
+            aria-label="A network diagram representing King's College London, Imperial College London and UCL coming together through the IKU hacker community."
+          >
             <svg viewBox="0 0 400 400">
               <defs>
                 <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
@@ -1229,28 +1265,79 @@
                   <stop offset="100%" stop-color="#EC4899" />
                 </linearGradient>
               </defs>
+
+              <!-- outer triangle: the three partner universities, united -->
+              <path
+                d="M200,40 L55,345 L345,345 Z"
+                stroke="#fff"
+                stroke-width="1.8"
+                fill="none"
+                opacity="0.35"
+              />
+
+              <!-- community links: hackers networking across the three universities -->
               <g
                 stroke="url(#lg1)"
-                stroke-width="1.4"
+                stroke-width="1.6"
                 fill="none"
-                opacity="0.75"
+                opacity="0.8"
               >
-                <path
-                  class="link-line"
-                  d="M80,90 L200,60 L320,110 L260,220 L120,260 L80,90 L200,60"
-                />
-                <path class="link-line" d="M200,60 L200,200" />
-                <path class="link-line" d="M120,260 L200,200 L260,220" />
-                <path class="link-line" d="M320,110 L200,200" />
-                <path class="link-line" d="M120,260 L200,330 L260,220" />
+                <path class="link-line" d="M134,186 L200,40" />
+                <path class="link-line" d="M134,186 L55,345" />
+                <path class="link-line" d="M266,186 L200,40" />
+                <path class="link-line" d="M266,186 L345,345" />
+                <path class="link-line" d="M200,259 L55,345" />
+                <path class="link-line" d="M200,259 L345,345" />
+                <path class="link-line" d="M134,186 L266,186" />
+                <path class="link-line" d="M134,186 L200,259" />
+                <path class="link-line" d="M266,186 L200,259" />
               </g>
-              <circle class="node d1" cx="80" cy="90" r="6" fill="#3B82F6" />
-              <circle class="node d2" cx="200" cy="60" r="6" fill="#A78BFA" />
-              <circle class="node d3" cx="320" cy="110" r="6" fill="#EC4899" />
-              <circle class="node d4" cx="200" cy="200" r="7" fill="#fff" />
-              <circle class="node d5" cx="260" cy="220" r="6" fill="#8B5CF6" />
-              <circle class="node d1" cx="120" cy="260" r="6" fill="#3B82F6" />
-              <circle class="node d3" cx="200" cy="330" r="6" fill="#EC4899" />
+
+              <!-- community / hacker nodes -->
+              <circle
+                class="node node-hub d2"
+                cx="134"
+                cy="186"
+                r="6"
+                fill="#fff"
+              />
+              <circle
+                class="node node-hub d4"
+                cx="266"
+                cy="186"
+                r="6"
+                fill="#fff"
+              />
+              <circle
+                class="node node-hub d5"
+                cx="200"
+                cy="259"
+                r="6"
+                fill="#fff"
+              />
+
+              <!-- three university nodes: King's, Imperial, UCL -->
+              <circle
+                class="node node-uni d1"
+                cx="200"
+                cy="40"
+                r="11"
+                fill="#EC4899"
+              />
+              <circle
+                class="node node-uni d3"
+                cx="55"
+                cy="345"
+                r="11"
+                fill="#8B5CF6"
+              />
+              <circle
+                class="node node-uni d2"
+                cx="345"
+                cy="345"
+                r="11"
+                fill="#3B82F6"
+              />
             </svg>
           </div>
         </div>
