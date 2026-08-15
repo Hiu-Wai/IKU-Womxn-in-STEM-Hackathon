@@ -235,28 +235,53 @@
   .timeline .time{ font-family:var(--font-display); font-size:13px; color:var(--violet-bright); font-weight:600; }
   .timeline .ev{ margin-top:4px; font-size:16px; color:#fff; font-weight:600; }
 
-  .day-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+ .day-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
   @media (max-width:760px){
-    .day-grid{ grid-template-columns:1fr; gap:12px; }
+    .day-grid{ grid-template-columns:1fr; gap:14px; }
     .timeline li{ padding-bottom:20px; }
   }
-  .day-col-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:28px; padding-bottom:16px; border-bottom:1px solid var(--line); }
-  .day-col-head .day-num{ font-family:var(--font-display); font-size:22px; font-weight:700; color:#fff; }
-  .day-col-head .day-date{ font-size:13px; color:var(--lilac-300); }
 
-  /* mobile: collapse each day into an accordion to shorten the scroll */
+  .day-col{
+    border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden;
+    background:linear-gradient(180deg, rgba(139,92,246,0.07), transparent 45%);
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  .day-col[open]{
+    border-color:rgba(236,72,153,0.35);
+    box-shadow:0 16px 32px -18px rgba(139,92,246,0.5);
+  }
+  .day-col-head{
+    margin:0; padding:20px; border-bottom:none; cursor:pointer;
+    display:flex; justify-content:space-between; align-items:center; list-style:none;
+    -webkit-tap-highlight-color:transparent; transition:background .2s ease;
+  }
+  .day-col-head:hover{ background:rgba(255,255,255,0.03); }
+  .day-col-head:active{ background:rgba(255,255,255,0.05); }
+  .day-col-head::-webkit-details-marker{ display:none; }
+  .day-col-head::marker{ display:none; }
+  .day-col[open] .day-col-head{ border-bottom:1px solid var(--line); }
+  .day-col-head .day-num{
+    font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:.02em;
+    padding:6px 14px; border-radius:100px; color:#fff;
+    background:linear-gradient(135deg,var(--pink),var(--violet));
+  }
+  .day-col-head .day-date{ font-size:13.5px; color:var(--lilac-100); font-weight:600; }
+  .day-col-body{ padding:22px 20px 8px; animation:dayReveal .28s ease; }
+  @keyframes dayReveal{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:translateY(0); } }
+  .day-chevron{
+    flex:none; width:26px; height:26px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--lilac-300);
+    transition:transform .3s ease, border-color .3s ease, color .3s ease, background .3s ease;
+    padding-bottom:3.5px;
+  }
+  .day-col[open] .day-chevron{
+    transform:rotate(45deg); border-color:transparent; color:#fff;
+    background:linear-gradient(135deg,var(--pink),var(--violet));
+  }
+
+  /* mobile: stack the two day cards with spacing between them */
   @media (max-width:760px){
-    .day-col{ border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; }
-    .day-col-head{
-      margin:0; padding:18px 18px; border-bottom:none; cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center; list-style:none;
-    }
-    .day-col-head::-webkit-details-marker{ display:none; }
-    .day-col-head::marker{ display:none; }
-    .day-col[open] .day-col-head{ border-bottom:1px solid var(--line); }
-    .day-col-body{ padding:20px 18px 4px; }
-    .day-chevron{ flex:none; width:22px; height:22px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--lilac-300); transition:transform .25s ease; }
-    .day-col[open] .day-chevron{ transform:rotate(45deg); border-color:var(--pink); color:var(--pink); }
+    .day-col + .day-col{ margin-top:14px; }
   }
 
   section#faq-headfix { display:none; }
@@ -639,7 +664,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 IKU Womxn in STEM Hackathon. All rights reserved.</span>
-    <span>Website created by Chloe Ho.</span>
+    <span>Website created by <a href="https://github.com/Hiu-Wai">Chloe Ho</a>.</span>
   </div>
 </footer>
 
