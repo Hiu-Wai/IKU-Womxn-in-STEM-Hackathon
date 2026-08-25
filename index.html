@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IKU Womxn in STEM Hackathon 2026 | KCL, UCL & Imperial</title>
+    <link rel="icon" type="image/svg+xml" href="images/iku-logo.svg" />
     <meta
       name="description"
       content="IKU Womxn in STEM Hackathon — a cross-university hackathon for female and non-binary students across King's College London, UCL and Imperial College London. Hosted at Bush House, KCL, October 2026. In partnership with MLH and Hackathons UK."
@@ -630,6 +631,10 @@
         background-clip: text;
         color: transparent;
       }
+      .stat .num.symbol {
+        font-size: 58px;
+        line-height: 1;
+      }
       .stat .lab {
         margin-top: 6px;
         font-size: 13.5px;
@@ -950,6 +955,16 @@
         text-align: center;
         border-color: rgba(236, 72, 153, 0.35);
         box-shadow: 0 16px 32px -18px rgba(139, 92, 246, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 140px;
+      }
+      .partner-card a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .partner-card .mark {
         font-family: var(--font-display);
@@ -1175,13 +1190,30 @@
         padding: 16px 0;
         border-bottom: 1px solid var(--line);
       }
+
+      .partner-logo-img {
+        height: 40px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+      .partner-card img[src*="wistem"] {
+        transform: scale(2.5);
+        transform-origin: center;
+      }
     </style>
   </head>
   <body>
     <nav class="nav">
       <div class="nav-inner">
         <a href="#top" class="brand">
-          <span class="brand-mark">IKU</span>
+          <img
+            src="images/iku-logo.svg"
+            alt="IKU logo"
+            style="max-height: 60px; width: auto"
+          />
           <span class="brand-name"
             >IKU Womxn in STEM Hackathon<span>KCL · Imperial · UCL</span></span
           >
@@ -1379,8 +1411,8 @@
               <div class="lab">Hours of hacking</div>
             </div>
             <div class="stat">
-              <div class="num">4</div>
-              <div class="lab">Tracks</div>
+              <div class="num symbol">∞</div>
+              <div class="lab">Unlimited fun</div>
             </div>
             <div class="stat">
               <div class="num">£0</div>
@@ -1712,12 +1744,43 @@
             <h2>Presented with</h2>
           </div>
           <div class="partner-grid">
-            <div class="partner-card"><div class="mark">MLH</div></div>
             <div class="partner-card">
-              <div class="mark">Hackathons UK</div>
+              <a
+                href="https://www.mlh.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MLH website"
+              >
+                <img
+                  src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.svg"
+                  alt="MLH"
+                  loading="lazy"
+                  class="partner-logo-img"
+                />
+              </a>
             </div>
             <div class="partner-card">
-              <div class="mark">KCL WiSTEM</div>
+              <a
+                href="https://www.hackathons.org.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hackathons UK website"
+              >
+                <img
+                  src="https://cdn.hackathons.org.uk/logo/White.png"
+                  alt="Hackathons UK"
+                  loading="lazy"
+                  class="partner-logo-img"
+                />
+              </a>
+            </div>
+            <div class="partner-card">
+              <img
+                src="images/kcl-wistem-logo.svg"
+                alt="KCL Womxn in STEM"
+                loading="lazy"
+                class="partner-logo-img"
+              />
               <div class="role">Host & Main organiser</div>
             </div>
             <div class="partner-card">
