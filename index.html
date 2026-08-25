@@ -973,11 +973,19 @@
         color: #fff;
       }
       .partner-card .role {
-        margin-top: 6px;
+        margin-top: 16px;
         font-size: 12px;
         color: var(--lilac-300);
         text-transform: uppercase;
         letter-spacing: 0.08em;
+      }
+      .partner-card .logo-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+        width: 100%;
       }
 
       /* sponsors */
@@ -1202,6 +1210,16 @@
       .partner-card img[src*="wistem"] {
         transform: scale(2.5);
         transform-origin: center;
+      }
+      .partner-card img[src*="wset"] {
+        transform: scale(2.5);
+        transform-origin: center;
+      }
+      
+      .partner-card img[src*="wissoc"] {
+        transform: scale(2.5);
+        transform-origin: center;
+        height: 35px;
       }
     </style>
   </head>
@@ -1775,16 +1793,51 @@
               </a>
             </div>
             <div class="partner-card">
-              <img
-                src="images/kcl-wistem-logo.svg"
-                alt="KCL Womxn in STEM"
-                loading="lazy"
-                class="partner-logo-img"
-              />
+              <a
+                href="https://www.kclwomeninstem.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="KCL Womxn in STEM website"
+              >
+                <img
+                  src="images/kcl-wistem-logo.svg"
+                  alt="KCL Womxn in STEM"
+                  loading="lazy"
+                  class="partner-logo-img"
+                />
+              </a>
               <div class="role">Host & Main organiser</div>
             </div>
             <div class="partner-card">
-              <div class="mark">Imperial &amp; UCL WiSTEM</div>
+              <div class="logo-group">
+                <a
+                  href="https://imperialwset.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Imperial Women in SET website"
+                >
+                  <img
+                    src="images/ic-wset-logo.svg"
+                    alt="Imperial Women in SET"
+                    loading="lazy"
+                    class="partner-logo-img"
+                  />
+                  </a>
+                  <a
+                  href="https://studentsunionucl.org/clubs-societies/women-in-stem-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="UCL Women in STEM website"
+                >
+              
+                <img
+                  src="images/ucl-wissoc-logo.svg"
+                  alt="UCL Women in STEM"
+                  loading="lazy"
+                  class="partner-logo-img"
+                />
+                </a>
+              </div>
               <div class="role">Co-organisers</div>
             </div>
           </div>
