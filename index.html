@@ -15,8 +15,6 @@
     />
     <meta name="theme-color" content="#170B33" />
     <link rel="canonical" href="https://ikuwomxninstemhackathon.co.uk/" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="IKU Womxn in STEM Hackathon 2026" />
     <meta
@@ -27,19 +25,15 @@
     <meta property="og:site_name" content="IKU Womxn in STEM Hackathon" />
     <meta
       property="og:image"
-      content="https://ikuwomxninstemhackathon.co.uk/og-image.png"
+      content="https://ikuwomxninstemhackathon.co.uk/images/iku-logo.png"
     />
     <meta property="og:locale" content="en_GB" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="IKU Womxn in STEM Hackathon 2026" />
     <meta
       name="twitter:description"
       content="A cross-university hackathon for female and non-binary students across KCL, UCL & Imperial. Partnered with MLH and Hackathons UK."
     />
-
-    <!-- Structured data: helps Google understand & surface this as an Event -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -73,14 +67,12 @@
         }
       }
     </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
       rel="stylesheet"
     />
-
     <style>
       :root {
         --ink-950: #12082b;
@@ -104,7 +96,6 @@
         --radius-sm: 10px;
         --max-w: 1160px;
       }
-
       * {
         box-sizing: border-box;
       }
@@ -128,7 +119,6 @@
           scroll-behavior: auto !important;
         }
       }
-
       img {
         max-width: 100%;
         display: block;
@@ -141,7 +131,6 @@
         outline-offset: 3px;
         border-radius: 4px;
       }
-
       .wrap {
         max-width: var(--max-w);
         margin: 0 auto;
@@ -175,8 +164,6 @@
         background: var(--pink);
         border-radius: 2px;
       }
-
-      /* ---------- NAV ---------- */
       .nav {
         position: sticky;
         top: 0;
@@ -200,25 +187,6 @@
         gap: 10px;
         text-decoration: none;
         min-width: 0;
-      }
-      .brand-mark {
-        width: 34px;
-        height: 34px;
-        border-radius: 9px;
-        background: linear-gradient(
-          135deg,
-          var(--blue),
-          var(--violet) 55%,
-          var(--pink)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 14px;
-        color: #fff;
-        flex: none;
       }
       .brand-name {
         font-family: var(--font-display);
@@ -280,7 +248,6 @@
         cursor: pointer;
         flex: none;
       }
-
       @media (max-width: 860px) {
         .nav-links {
           display: none;
@@ -300,8 +267,6 @@
           display: none;
         }
       }
-
-      /* ---------- HERO ---------- */
       .hero {
         padding: 88px 24px 70px;
         overflow: hidden;
@@ -331,32 +296,6 @@
           grid-template-columns: 1fr;
         }
       }
-
-      .badge-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 22px;
-        flex-wrap: wrap;
-      }
-      .partner-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11.5px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        color: var(--ink-900);
-        background: var(--lilac-100);
-        padding: 6px 12px;
-        border-radius: 100px;
-      }
-      .partner-chip.alt {
-        background: transparent;
-        color: var(--lilac-300);
-        border: 1px solid var(--line);
-      }
-
       .hero h1 {
         font-size: clamp(34px, 5.4vw, 64px);
         line-height: 1.06;
@@ -430,7 +369,6 @@
       .btn-ghost:hover {
         border-color: var(--violet-bright);
       }
-
       .hero-meta {
         margin-top: 38px;
         display: flex;
@@ -449,8 +387,6 @@
         font-weight: 600;
         margin-bottom: 2px;
       }
-
-      /* signature network graphic */
       .constellation {
         position: relative;
         aspect-ratio: 1/1;
@@ -475,7 +411,6 @@
           max-width: 280px;
         }
       }
-
       .node {
         transform-origin: center;
       }
@@ -531,8 +466,6 @@
           stroke-dashoffset: -400;
         }
       }
-
-      /* ---------- COUNTDOWN STRIP ---------- */
       .countdown {
         background: linear-gradient(90deg, var(--ink-800), var(--ink-700));
         border-top: 1px solid var(--line);
@@ -574,8 +507,6 @@
         color: var(--lilac-300);
         margin-top: 2px;
       }
-
-      /* ---------- SECTION SHELL ---------- */
       .section {
         padding: 96px 24px;
       }
@@ -587,6 +518,7 @@
         font-size: clamp(26px, 3.4vw, 40px);
         margin-top: 14px;
         letter-spacing: -0.01em;
+        max-width: 100%;
       }
       .section-head p {
         color: var(--lilac-300);
@@ -604,8 +536,6 @@
           margin-bottom: 36px;
         }
       }
-
-      /* stats */
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -648,8 +578,6 @@
           padding: 24px 16px;
         }
       }
-
-      /* about */
       .about-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -704,8 +632,6 @@
         border: 1px solid var(--line);
         color: var(--lilac-300);
       }
-
-      /* timetable */
       .timeline {
         list-style: none;
         margin: 0;
@@ -739,7 +665,6 @@
         color: #fff;
         font-weight: 600;
       }
-
       .day-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -755,7 +680,6 @@
           padding-bottom: 20px;
         }
       }
-
       .day-col {
         border: 1px solid var(--line);
         border-radius: var(--radius-md);
@@ -853,22 +777,11 @@
         color: #fff;
         background: linear-gradient(135deg, var(--pink), var(--violet));
       }
-
-      /* mobile: stack the two day cards with spacing between them */
       @media (max-width: 760px) {
         .day-col + .day-col {
           margin-top: 14px;
         }
       }
-
-      section#faq-headfix {
-        display: none;
-      }
-      .section-head h2 {
-        max-width: 100%;
-      }
-
-      /* FAQ */
       .faq-item {
         border-bottom: 1px solid var(--line);
       }
@@ -935,8 +848,6 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
-
-      /* partners */
       .partner-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -972,9 +883,17 @@
         font-size: 15px;
         color: #fff;
       }
+      .partner-card .partner-name {
+        margin-top: 14px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 13px;
+        color: #fff;
+        line-height: 1.35;
+      }
       .partner-card .role {
-        margin-top: 16px;
-        font-size: 12px;
+        margin-top: 4px;
+        font-size: 11px;
         color: var(--lilac-300);
         text-transform: uppercase;
         letter-spacing: 0.08em;
@@ -984,11 +903,22 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 70px;
+        gap: 20px;
+        flex-wrap: wrap;
         width: 100%;
       }
-
-      /* sponsors */
+      .partner-logo-img {
+        height: 40px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+      .partner-logo-img.logo-lg {
+        height: 64px;
+        max-width: 110px;
+      }
       .sponsor-panel {
         border: 1px dashed var(--line);
         border-radius: var(--radius-lg);
@@ -1040,27 +970,11 @@
         margin: 14px auto 26px;
         font-size: 15.5px;
       }
-      .sponsor-logos-placeholder {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-top: 8px;
-      }
-      .sponsor-slot {
-        width: 110px;
-        height: 56px;
-        border-radius: 12px;
-        border: 1px dashed var(--line);
-        background: var(--ink-800);
-      }
       @media (max-width: 760px) {
         .sponsor-panel {
           padding: 40px 20px;
         }
       }
-
-      /* location */
       .location-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1083,8 +997,6 @@
         height: 100%;
         border: 0;
       }
-
-      /* CTA band */
       .cta-band {
         margin: 0 24px 96px;
         border-radius: var(--radius-lg);
@@ -1113,8 +1025,6 @@
           padding: 44px 24px;
         }
       }
-
-      /* footer */
       footer {
         border-top: 1px solid var(--line);
         padding: 56px 24px 32px;
@@ -1155,6 +1065,14 @@
       .footer-inner a:hover {
         color: var(--lilac-500);
       }
+      .footer-social {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .footer-social svg {
+        flex: none;
+      }
       .footer-bottom {
         max-width: var(--max-w);
         margin: 40px auto 0;
@@ -1167,7 +1085,6 @@
         font-size: 13px;
         color: var(--lilac-300);
       }
-
       .mobile-menu {
         display: none;
         position: fixed;
@@ -1199,38 +1116,45 @@
         border-bottom: 1px solid var(--line);
       }
 
-      .partner-logo-img {
-        height: 40px;
-        width: auto;
-        max-width: 150px;
-        object-fit: contain;
-        margin: 0 auto;
-        display: block;
-      }
-      .partner-card img[src*="wistem"] {
-        transform: scale(2.5);
-        transform-origin: center;
-      }
-      .partner-card img[src*="wset"] {
-        transform: scale(2.5);
-        transform-origin: center;
-      }
-      
-      .partner-card img[src*="wissoc"] {
-        transform: scale(2.5);
-        transform-origin: center;
-        height: 35px;
+      @media (max-width: 480px) {
+        #mlh-trust-badge {
+          top: 68px !important;
+          right: 10px !important;
+          max-width: 52px !important;
+          min-width: 44px !important;
+          width: 14% !important;
+        }
       }
     </style>
   </head>
   <body>
+    <a
+      id="mlh-trust-badge"
+      style="
+        display: block;
+        max-width: 90px;
+        min-width: 56px;
+        position: fixed;
+        right: 20px;
+        top: 76px;
+        width: 9%;
+        z-index: 10000;
+      "
+      href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=white"
+      target="_blank"
+      ><img
+        src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-white.svg"
+        alt="Major League Hacking 2027 Hackathon Season"
+        style="width: 100%"
+    /></a>
+
     <nav class="nav">
       <div class="nav-inner">
         <a href="#top" class="brand">
           <img
             src="images/iku-logo.svg"
             alt="IKU logo"
-            style="max-height: 60px; width: auto"
+            style="max-height: 34px; width: auto"
           />
           <span class="brand-name"
             >IKU Womxn in STEM Hackathon<span>KCL · Imperial · UCL</span></span
@@ -1315,8 +1239,6 @@
                   <stop offset="100%" stop-color="#EC4899" />
                 </linearGradient>
               </defs>
-
-              <!-- outer triangle: the three partner universities, united -->
               <path
                 d="M200,40 L55,345 L345,345 Z"
                 stroke="#fff"
@@ -1324,8 +1246,6 @@
                 fill="none"
                 opacity="0.35"
               />
-
-              <!-- community links: hackers networking across the three universities -->
               <g
                 stroke="url(#lg1)"
                 stroke-width="1.6"
@@ -1342,8 +1262,6 @@
                 <path class="link-line" d="M134,186 L200,259" />
                 <path class="link-line" d="M266,186 L200,259" />
               </g>
-
-              <!-- community / hacker nodes -->
               <circle
                 class="node node-hub d2"
                 cx="134"
@@ -1365,8 +1283,6 @@
                 r="6"
                 fill="#fff"
               />
-
-              <!-- three university nodes: King's, Imperial, UCL -->
               <circle
                 class="node node-uni d1"
                 cx="200"
@@ -1776,6 +1692,7 @@
                   class="partner-logo-img"
                 />
               </a>
+              <div class="partner-name">Major League Hacking</div>
             </div>
             <div class="partner-card">
               <a
@@ -1791,6 +1708,7 @@
                   class="partner-logo-img"
                 />
               </a>
+              <div class="partner-name">Hackathons UK</div>
             </div>
             <div class="partner-card">
               <a
@@ -1803,9 +1721,10 @@
                   src="images/kcl-wistem-logo.svg"
                   alt="KCL Womxn in STEM"
                   loading="lazy"
-                  class="partner-logo-img"
+                  class="partner-logo-img logo-lg"
                 />
               </a>
+              <div class="partner-name">KCL Womxn in STEM</div>
               <div class="role">Host & Main organiser</div>
             </div>
             <div class="partner-card">
@@ -1820,23 +1739,25 @@
                     src="images/ic-wset-logo.svg"
                     alt="Imperial Women in SET"
                     loading="lazy"
-                    class="partner-logo-img"
+                    class="partner-logo-img logo-lg"
                   />
-                  </a>
-                  <a
+                </a>
+                <a
                   href="https://studentsunionucl.org/clubs-societies/women-in-stem-society"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="UCL Women in STEM website"
                 >
-              
-                <img
-                  src="images/ucl-wissoc-logo.svg"
-                  alt="UCL Women in STEM"
-                  loading="lazy"
-                  class="partner-logo-img"
-                />
+                  <img
+                    src="images/ucl-wissoc-logo.svg"
+                    alt="UCL Women in STEM"
+                    loading="lazy"
+                    class="partner-logo-img logo-lg"
+                  />
                 </a>
+              </div>
+              <div class="partner-name">
+                Imperial Women in SET &amp; UCL Women in STEM
               </div>
               <div class="role">Co-organisers</div>
             </div>
@@ -1864,13 +1785,6 @@
               class="btn btn-primary"
               >Become a sponsor</a
             >
-
-            <!--<div class="sponsor-logos-placeholder">
-          <div class="sponsor-slot"></div>
-          <div class="sponsor-slot"></div>
-          <div class="sponsor-slot"></div>
-          <div class="sponsor-slot"></div>
-        </div>-->
           </div>
         </div>
       </section>
@@ -1933,8 +1847,40 @@
                 >ikuwomxninstemhackathon@gmail.com</a
               >
             </li>
-            <li><a href="https://www.instagram.com/ikuhack/">Instagram</a></li>
-            <!--<li><a href="https://discord.gg/4ErM6gmBm">Discord</a></li>-->
+            <li>
+              <a
+                href="https://www.instagram.com/ikuhack/"
+                class="footer-social"
+                aria-label="IKU on Instagram"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4.5"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+                </svg>
+                Instagram
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -1955,13 +1901,14 @@
         <span>© 2026 IKU Womxn in STEM Hackathon. All rights reserved.</span>
         <span
           >Website created by
-          <a href="https://www.linkedin.com/in/hiu-wai-ho-39b954257/">Chloe Ho</a>.</span
+          <a href="https://www.linkedin.com/in/hiu-wai-ho-39b954257/"
+            >Chloe Ho</a
+          >.</span
         >
       </div>
     </footer>
 
     <script>
-      // mobile menu
       const menu = document.getElementById("mobileMenu");
       document
         .getElementById("menuOpen")
@@ -1975,7 +1922,6 @@
           a.addEventListener("click", () => menu.classList.remove("open")),
         );
 
-      // countdown — set to your confirmed event date
       const eventDate = new Date("2026-10-17T09:00:00+01:00").getTime();
       function tick() {
         const now = Date.now();
@@ -2004,7 +1950,6 @@
       tick();
       setInterval(tick, 1000);
 
-      // only close FAQ items other than the one opened, accordion behaviour
       document.querySelectorAll(".faq-item").forEach((item) => {
         item.addEventListener("toggle", () => {
           if (item.open) {
