@@ -508,7 +508,7 @@
         margin-top: 2px;
       }
       .section {
-        padding: 96px 24px;
+        padding: 72px 18px;
       }
       .section-head {
         max-width: 640px;
@@ -919,6 +919,60 @@
         height: 64px;
         max-width: 110px;
       }
+      .supporter-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      @media (max-width: 560px) {
+        .supporter-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .supporter-card {
+        background: var(--ink-800);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        border-color: rgba(236, 72, 153, 0.35);
+        box-shadow: 0 16px 32px -18px rgba(139, 92, 246, 0.5);
+        padding: 22px 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 96px;
+      }
+      .supporter-card a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .supporter-logo-img {
+        height: 30px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+      .supporter-name {
+        margin-top: 10px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 11.5px;
+        color: #fff;
+      }
+      .logo-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 8px;
+        padding: 6px 12px;
+      }
       .sponsor-panel {
         border: 1px dashed var(--line);
         border-radius: var(--radius-lg);
@@ -1165,6 +1219,7 @@
           <li><a href="#timetable">Timetable</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#supporters">Supporters</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
         <a href="https://forms.gle/8pEE5QtPyJivaHe67" class="nav-cta"
@@ -1671,6 +1726,30 @@
         </div>
       </section>
 
+      <section class="section alt-bg" id="sponsors">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Sponsors</span>
+            <h2>Backing IKU</h2>
+          </div>
+          <div class="sponsor-panel">
+            <span class="soon-badge">Coming soon</span>
+            <h3>Our sponsor lineup is being finalised.</h3>
+            <p>
+              We're in conversation with companies who want to back womxn and
+              non-binary students in tech. Check back closer to October for the
+              full list — or get in touch if your company wants to be part of
+              it.
+            </p>
+            <a
+              href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
+              class="btn btn-primary"
+              >Become a sponsor</a
+            >
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="partners">
         <div class="wrap">
           <div class="section-head">
@@ -1765,26 +1844,47 @@
         </div>
       </section>
 
-      <section class="section alt-bg" id="sponsors">
+      <section class="section" id="supporters">
         <div class="wrap">
           <div class="section-head">
-            <span class="eyebrow">Sponsors</span>
-            <h2>Backing IKU</h2>
+            <span class="eyebrow">Supporters</span>
+            <h2 style="font-size:22px;">With support from</h2>
           </div>
-          <div class="sponsor-panel">
-            <span class="soon-badge">Coming soon</span>
-            <h3>Our sponsor lineup is being finalised.</h3>
-            <p>
-              We're in conversation with companies who want to back womxn and
-              non-binary students in tech. Check back closer to October for the
-              full list — or get in touch if your company wants to be part of
-              it.
-            </p>
-            <a
-              href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
-              class="btn btn-primary"
-              >Become a sponsor</a
-            >
+          <div class="supporter-grid">
+            <div class="supporter-card">
+              <a
+                href="https://www.purebuttons.com/?srsltid=AfmBOorn4brIjKdUfmtTDzLdvUAOC5FVMIecDIqHpLGrfj8o9CmD9S01"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pure Buttons website"
+              >
+                <span class="logo-chip">
+                  <img
+                    src="https://static.mlh.io/brand-assets/sponsors/pure-buttons/Pure-Buttons-Blue-Gradient-Logo-RGB.svg?_gl=1*114cruz*_ga*MTcxMDY2NDk4NC4xNzg1NzcwNjU2*_ga_E5KT6TC4TK*czE3ODc5MDAzNTYkbzE3JGcwJHQxNzg3OTAwMzU3JGo1OSRsMCRoMA.."
+                    alt="Pure Buttons"
+                    loading="lazy"
+                    class="supporter-logo-img"
+                  />
+                </span>
+              </a>
+              <div class="supporter-name">Pure Buttons</div>
+            </div>
+            <div class="supporter-card">
+              <a
+                href="https://elevenlabs.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ElevenLabs website"
+              >
+                <img
+                  src="https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-white.svg"
+                  alt="ElevenLabs"
+                  loading="lazy"
+                  class="supporter-logo-img"
+                />
+              </a>
+              <div class="supporter-name">ElevenLabs</div>
+            </div>
           </div>
         </div>
       </section>
