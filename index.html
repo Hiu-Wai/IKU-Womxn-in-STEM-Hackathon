@@ -668,6 +668,55 @@
         color: #fff;
         font-weight: 600;
       }
+      .ev-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .loc-pop {
+        position: relative;
+      }
+      .loc-pop summary {
+        list-style: none;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: var(--lilac-300);
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .loc-pop summary::-webkit-details-marker {
+        display: none;
+      }
+      .loc-pop summary::marker {
+        display: none;
+      }
+      .loc-pop[open] summary {
+        border-color: var(--pink);
+        color: var(--pink);
+      }
+      .loc-pop-body {
+        position: absolute;
+        top: 26px;
+        left: 0;
+        z-index: 20;
+        background: var(--ink-800);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 13px;
+        color: var(--lilac-100);
+        white-space: nowrap;
+        box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+        animation: dayReveal 0.2s ease;
+      }
       .day-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1496,39 +1545,72 @@
               <div class="day-col-body">
                 <ul class="timeline">
                   <li>
-                    <div class="time">09:00 – 10:30</div>
-                    <div class="ev">Registration open</div>
+                    <div class="time">09:00</div>
+                    <div class="ev-row">
+                      <div class="ev">Registration open</div>
+                      <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">
+                          Bush House, Lobby, North Entrance
+                        </div>
+                      </details>
+                    </div>
                   </li>
                   <li>
-                    <div class="time">10:00 – 11:00</div>
+                    <div class="time">10:00</div>
+                    <div class="ev-row">
                     <div class="ev">Opening ceremony</div>
+                    <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">
+                          Bush House, Auditorium, -1st floor
+                        </div>
+                      </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">11:00</div>
                     <div class="ev">Hacking starts</div>
+
                   </li>
                   <li>
-                    <div class="time">13:00 – 14:00</div>
+                    <div class="time">13:00</div>
                     <div class="ev">Lunch</div>
                   </li>
                   <li>
-                    <div class="time">14:00 – 15:00</div>
+                    <div class="time">14:00</div>
+                    <div class="ev-row">
                     <div class="ev">Workshop / talk</div>
+                    <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">
+                          Bush House, Auditorium, -1st floor
+                        </div>
+                      </details>
+                    </div>
                   </li>
                   <li>
-                    <div class="time">16:00 – 17:00</div>
-                    <div class="ev">Workshop / talk</div>
+                    <div class="time">16:00</div>
+                    <div class="ev-row">
+                      <div class="ev">Workshop / talk</div>
+                      <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">
+                          Bush House, Auditorium, -1st floor
+                        </div>
+                      </details>
+                    </div>
                   </li>
                   <li>
-                    <div class="time">18:00 – 19:00</div>
+                    <div class="time">18:00</div>
                     <div class="ev">Dinner</div>
                   </li>
                   <li>
-                    <div class="time">19:00 – 20:00</div>
+                    <div class="time">19:00</div>
                     <div class="ev">Workshop / talk</div>
                   </li>
                   <li>
-                    <div class="time">20:00 – 20:30</div>
+                    <div class="time">20:00</div>
                     <div class="ev">Mini event</div>
                   </li>
                   <li>
@@ -1559,7 +1641,7 @@
                     <div class="ev">SleepSpace closes</div>
                   </li>
                   <li>
-                    <div class="time">09:00 – 10:00</div>
+                    <div class="time">09:00</div>
                     <div class="ev">Breakfast</div>
                   </li>
                   <li>
@@ -1567,16 +1649,23 @@
                     <div class="ev">Hacking ends / submission deadline</div>
                   </li>
                   <li>
-                    <div class="time">12:00 – 13:00</div>
+                    <div class="time">12:00</div>
                     <div class="ev">Lunch</div>
                   </li>
                   <li>
-                    <div class="time">13:00 – 15:00</div>
+                    <div class="time">13:00</div>
                     <div class="ev">Judging</div>
                   </li>
                   <li>
-                    <div class="time">15:00 – 16:00</div>
-                    <div class="ev">Closing ceremony</div>
+                    <div class="time">15:00</div>
+                    <div class = "ev-row">
+                      <div class="ev">Closing ceremony</div>
+                      <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">
+                          Bush House, Auditorium, -1st floor
+                        </div>
+                      </details>
                   </li>
                   <li>
                     <div class="time">16:00</div>
@@ -1851,7 +1940,7 @@
         <div class="wrap">
           <div class="section-head">
             <span class="eyebrow">Supporters</span>
-            <h2 style="font-size:22px;">With support from</h2>
+            <h2 style="font-size: 22px">With support from</h2>
           </div>
           <div class="supporter-grid">
             <div class="supporter-card">
@@ -2057,6 +2146,15 @@
         item.addEventListener("toggle", () => {
           if (item.open) {
             document.querySelectorAll(".faq-item").forEach((other) => {
+              if (other !== item) other.open = false;
+            });
+          }
+        });
+      });
+      document.querySelectorAll(".loc-pop").forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (item.open) {
+            document.querySelectorAll(".loc-pop").forEach((other) => {
               if (other !== item) other.open = false;
             });
           }
