@@ -703,20 +703,22 @@
         color: var(--pink);
       }
       .loc-pop-body {
-        position: absolute;
-        top: 26px;
-        left: 0;
-        z-index: 20;
+        position: fixed;
+        z-index: 9999;
         background: var(--ink-800);
         border: 1px solid var(--line);
         border-radius: 10px;
         padding: 10px 14px;
         font-size: 13px;
         color: var(--lilac-100);
-        white-space: nowrap;
-        box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+        white-space: normal;
+        width: max-content;
+        max-width: min(230px, calc(100vw - 32px));
+        box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.55);
         animation: dayReveal 0.2s ease;
+        visibility: hidden;
       }
+      .loc-pop-body.positioned { visibility: visible; }
       .day-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -906,9 +908,11 @@
         gap: 16px;
       }
       @media (max-width: 760px) {
-        .partner-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
+        .partner-grid { grid-template-columns: repeat(2, 1fr); }
+        .partner-card { min-height: 210px; }
+        .partner-card .logo-group { flex-direction: column; gap: 5px; }
+        .partner-card .partner-name { font-size: 12.5px;}
+        .partner-card .role { font-size: 10px;}
       }
       .partner-card {
         background: var(--ink-800);
@@ -2209,9 +2213,22 @@
       document.querySelectorAll(".loc-pop").forEach((item) => {
         item.addEventListener("toggle", () => {
           if (item.open) {
-            document.querySelectorAll(".loc-pop").forEach((other) => {
-              if (other !== item) other.open = false;
-            });
+            document.querySelectorAll(".loc-pop").forEach((other) => { if (other !== item) other.open = false; });
+            const body = item.querySelector(".loc-pop-body");
+            const summary = item.querySelector("summary");
+            const rect = summary.getBoundingClientRect();
+            const margin = 12;
+            const popWidth = body.offsetWidth;
+            let left = rect.left;
+            const maxLeft = window.innerWidth - popWidth - margin;
+            left = Math.min(left, maxLeft);
+            left = Math.max(left, margin);
+            body.style.left = left + "px";
+            body.style.top = (rect.bottom + 6) + "px";
+            body.classList.add("positioned");
+          } else {
+            const body = item.querySelector(".loc-pop-body");
+            body.classList.remove("positioned");
           }
         });
       });
