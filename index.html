@@ -2232,6 +2232,9 @@
           }
         });
       });
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".loc-pop[open]").forEach((item) => { item.open = false; });
+      }, { passive: true });
     </script>
   </body>
 </html>
