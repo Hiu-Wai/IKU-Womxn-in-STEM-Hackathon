@@ -718,7 +718,9 @@
         animation: dayReveal 0.2s ease;
         visibility: hidden;
       }
-      .loc-pop-body.positioned { visibility: visible; }
+      .loc-pop-body.positioned {
+        visibility: visible;
+      }
       .day-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -908,11 +910,22 @@
         gap: 16px;
       }
       @media (max-width: 760px) {
-        .partner-grid { grid-template-columns: repeat(2, 1fr); }
-        .partner-card { min-height: 210px; }
-        .partner-card .logo-group { flex-direction: column; gap: 5px; }
-        .partner-card .partner-name { font-size: 12.5px;}
-        .partner-card .role { font-size: 10px;}
+        .partner-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .partner-card {
+          min-height: 210px;
+        }
+        .partner-card .logo-group {
+          flex-direction: column;
+          gap: 5px;
+        }
+        .partner-card .partner-name {
+          font-size: 12.5px;
+        }
+        .partner-card .role {
+          font-size: 10px;
+        }
       }
       .partner-card {
         background: var(--ink-800);
@@ -1062,88 +1075,92 @@
         background: var(--pink);
         animation: pulseDot 1.6s ease-in-out infinite;
       }*/
-      .sponsor-tiers { 
-        display: flex; flex-direction: column; gap: 40px; 
+      .sponsor-tiers {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
       }
-      .sponsor-tier-label { 
-        display: flex; align-items: center;
-        gap: 10px; 
+      .sponsor-tier-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         font-family: var(--font-display);
-        font-weight: 700; font-size: 13px; 
+        font-weight: 700;
+        font-size: 13px;
         letter-spacing: 0.08em;
-        text-transform: uppercase; 
-        margin-bottom: 18px; 
+        text-transform: uppercase;
+        margin-bottom: 18px;
       }
-      .sponsor-tier-label .dot { 
-        width: 10px; 
-        height: 10px; 
-        border-radius: 50%; 
-        flex: none; 
+      .sponsor-tier-label .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex: none;
       }
-      .tier-gold .sponsor-tier-label { 
-        color: #f0c766; 
+      .tier-gold .sponsor-tier-label {
+        color: #f0c766;
       }
-      .tier-gold .dot { 
-        background: linear-gradient(135deg, #f5d361, #c9922a); 
+      .tier-gold .dot {
+        background: linear-gradient(135deg, #f5d361, #c9922a);
       }
-      .tier-silver .sponsor-tier-label { 
-        color: #c7cdd6; 
+      .tier-silver .sponsor-tier-label {
+        color: #c7cdd6;
       }
-      .tier-silver .dot { 
-        background: linear-gradient(135deg, #e4e7ec, #9aa3af); 
+      .tier-silver .dot {
+        background: linear-gradient(135deg, #e4e7ec, #9aa3af);
       }
-      .sponsor-row { 
-        display: grid; 
-        grid-template-columns: 
-        repeat(auto-fit, minmax(160px, 1fr)); 
-        gap: 16px; 
+      .sponsor-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
       }
-      .sponsor-card { 
-        background: var(--ink-800); 
-        border: 1px solid var(--line); 
-        border-radius: var(--radius-md); 
-        padding: 24px 20px; display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center; 
-        text-align: center; 
+      .sponsor-card {
+        background: var(--ink-800);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
-      .tier-gold .sponsor-card { 
-        border-color: rgba(245, 211, 97, 0.35); 
-        box-shadow: 0 16px 32px -18px rgba(245, 211, 97, 0.35); 
-        min-height: 150px; 
+      .tier-gold .sponsor-card {
+        border-color: rgba(245, 211, 97, 0.35);
+        box-shadow: 0 16px 32px -18px rgba(245, 211, 97, 0.35);
+        min-height: 150px;
       }
-      .tier-silver .sponsor-card { 
-        border-color: rgba(180, 196, 224, 0.45); 
-        box-shadow: 0 16px 32px -18px rgba(148, 162, 185, 0.4); 
-        min-height: 120px; 
+      .tier-silver .sponsor-card {
+        border-color: rgba(180, 196, 224, 0.45);
+        box-shadow: 0 16px 32px -18px rgba(148, 162, 185, 0.4);
+        min-height: 120px;
       }
-      .sponsor-card img { 
-        height: 70px; 
-        width: auto; 
-        max-width: 200px; 
-        object-fit: contain; 
-        margin: 0 auto; 
-        display: block; 
+      .sponsor-card img {
+        height: 70px;
+        width: auto;
+        max-width: 200px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
       }
-      .tier-silver .sponsor-card img { 
-        height: 46px; 
+      .tier-silver .sponsor-card img {
+        height: 46px;
       }
-      .sponsor-card-name { 
-        margin-top: 12px; 
-        font-family: var(--font-display); 
-        font-weight: 700; 
-        font-size: 13px; 
-        color: #fff; 
+      .sponsor-card-name {
+        margin-top: 12px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 13px;
+        color: #fff;
       }
-      .sponsor-cta { 
-        text-align: center; 
-        margin-top: 48px; 
+      .sponsor-cta {
+        text-align: center;
+        margin-top: 48px;
       }
-      .sponsor-cta p { 
-        color: var(--lilac-300); 
-        margin-bottom: 18px; 
-        font-size: 15px; 
+      .sponsor-cta p {
+        color: var(--lilac-300);
+        margin-bottom: 18px;
+        font-size: 15px;
       }
       @keyframes pulseDot {
         0%,
@@ -1558,12 +1575,17 @@
             <p
               style="color: var(--lilac-300); margin-top: 16px; font-size: 16px"
             >
-              Womxn and non-binary students remain underrepresented at traditional hackathons. 
-              Not from a lack of talent, but because typical hackathon environments can feel intimidating to navigate. 
-              <br><br> Therefore, IKU was created to address this. <br><br> Organized by KCL Womxn in STEM, Imperial Women in STEM, and UCL Women in STEM at Bush House, 
-              IKU brings together students across King’s, UCL, and Imperial for a supportive weekend of building, mentorship, and community. 
-              
-              Whether it’s your very first build or your tenth, IKU provides a welcoming space designed to empower gender-minority students in tech.
+              Womxn and non-binary students remain underrepresented at
+              traditional hackathons. Not from a lack of talent, but because
+              typical hackathon environments can feel intimidating to navigate.
+              <br /><br />
+              Therefore, IKU was created to address this. <br /><br />
+              Organized by KCL Womxn in STEM, Imperial Women in STEM, and UCL
+              Women in STEM at Bush House, IKU brings together students across
+              King’s, UCL, and Imperial for a supportive weekend of building,
+              mentorship, and community. Whether it’s your very first build or
+              your tenth, IKU provides a welcoming space designed to empower
+              gender-minority students in tech.
             </p>
             <div class="uni-row">
               <span class="uni-pill">King's College London</span>
@@ -1646,8 +1668,8 @@
                   <li>
                     <div class="time">10:00</div>
                     <div class="ev-row">
-                    <div class="ev">Opening ceremony</div>
-                    <details class="loc-pop">
+                      <div class="ev">Opening ceremony</div>
+                      <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
                           Bush House, Auditorium, -1st floor
@@ -1658,24 +1680,24 @@
                   <li>
                     <div class="time">11:00</div>
                     <div class="ev">Hacking starts</div>
-
                   </li>
                   <li>
                     <div class="time">13:00</div>
                     <div class="ev-row">
-                    <div class="ev">Lunch</div>
-                    <details class="loc-pop">
+                      <div class="ev">Lunch</div>
+                      <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
                           Bush House, Informatics Labs Common Area, 6th floor
                         </div>
                       </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">14:00</div>
                     <div class="ev-row">
-                    <div class="ev">Workshop / talk</div>
-                    <details class="loc-pop">
+                      <div class="ev">Workshop / talk</div>
+                      <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
                           Bush House, Auditorium, -1st floor
@@ -1705,6 +1727,7 @@
                           Bush House Informatics Labs Common Area, 6th floor
                         </div>
                       </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">19:00</div>
@@ -1717,8 +1740,8 @@
                   <li>
                     <div class="time">21:00</div>
                     <div class="ev-row">
-                    <div class="ev">SleepSpace opens</div>
-                    <details class="loc-pop">
+                      <div class="ev">SleepSpace opens</div>
+                      <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
                           Bush House (SE) 1.02, (SE) 1.03, (SE) 1.04, (SE) 1.05
@@ -1751,7 +1774,7 @@
                   </li>
                   <li>
                     <div class="time">09:00</div>
-                    <div class = "ev-row">
+                    <div class="ev-row">
                       <div class="ev">Breakfast</div>
                       <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
@@ -1759,6 +1782,7 @@
                           Bush House, Informatics Labs Common Area, 6th floor
                         </div>
                       </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">12:00</div>
@@ -1774,6 +1798,7 @@
                           Bush House, Informatics Labs Common Area, 6th floor
                         </div>
                       </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">13:00</div>
@@ -1781,7 +1806,7 @@
                   </li>
                   <li>
                     <div class="time">15:00</div>
-                    <div class = "ev-row">
+                    <div class="ev-row">
                       <div class="ev">Closing ceremony</div>
                       <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
@@ -1789,6 +1814,7 @@
                           Bush House, Auditorium, -1st floor
                         </div>
                       </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">16:00</div>
@@ -1802,162 +1828,176 @@
       </section>
 
       <section class="section alt-bg" id="faq">
-              <div class="wrap">
-                <div class="section-head">
-                  <span class="eyebrow">Good to know</span>
-                  <h2>Frequently asked questions</h2>
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Good to know</span>
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div>
+            <details class="faq-item" open>
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>What is a hackathon?</span><span class="plus">+</span>
                 </div>
-                <div>
-                  <details class="faq-item" open>
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>What is a hackathon?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      A hackathon is an event where people come together to build
-                      projects, usually over a short period of time. At IKU, you'll
-                      have 24 hours to work on a project with your team, attend
-                      workshops and talks, and get mentorship from experienced
-                      developers. There will be no malicious "hacking" :P
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>Who can attend IKU?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      IKU is catered towards students who identify as female or
-                      non-binary, from any UK university, at any experience level,
-                      including complete beginners. But participants must be at least 18 years old and be a university student to attend.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>If I come from a non-CS field, can I still participate?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      Absolutely! We strongly encourage students from non-Computer Science backgrounds to join. We even offer a dedicated Best Beginner side track for non-CS participants. To be eligible for this prize, at least 50% of your team members must come from a non-CS adjacent background.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>How much does it cost?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      IKU is completely free to attend, including meals, snacks and
-                      swag.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>Where does it take place?</span
-                        ><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      Bush House on King's College London's Strand Campus, in central
-                      London.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>What is the duration of the event?</span
-                        ><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      IKU Womxn in STEM Hackathon takes place over a weekend and
-                      includes 24 hours of dedicated hacking time. Participants are
-                      welcome to head home overnight, stay awake throughout the event,
-                      or get some rest inside the venue. We provide dedicated sleeping
-                      and quiet rooms. If you plan to stay overnight, we recommend
-                      bringing something comfortable, such as a pillow, blanket, or
-                      hoodie.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>How do I sign up?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      Registration opens closer to the event, hit "Register interest"
-                      below and we'll email you the moment tickets go live.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>Do I need a team?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      No, you can arrive solo and form a team on the day, or come
-                      with friends. Teams are typically 2–4 people.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span
-                          >When can we start working on our projects? Can we use
-                          previous work?</span
-                        ><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      You can start working on your project as soon as the opening
-                      ceremony ends. You're welcome to brainstorm ideas beforehand,
-                      but all code and project work must be created during the event.
-                      Existing frameworks, libraries, and tools may be used, provided
-                      they are appropriately credited.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>How many tracks can I apply for?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      You can only apply for one main track, but you are welcome to choose as many side tracks as you like. Please note that side tracks are optional and do not affect your eligibility for prizes.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>What should I bring?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      Bring your laptop, charger, and any other equipment you need to
-                      build your project. We also recommend bringing a water bottle,
-                      snacks, and comfortable clothing. If you plan to stay overnight,
-                      consider bringing a pillow, blanket, or hoodie for comfort.
-                    </div>
-                  </details>
-                  <details class="faq-item">
-                    <summary class="faq-q">
-                      <div class="faq-q-row">
-                        <span>Are there travel reimbursements available?</span><span class="plus">+</span>
-                      </div>
-                    </summary>
-                    <div class="faq-a">
-                      Unfortunately, we are unable to provide travel reimbursements for this event.
-                    </div>
-                  </details>
-                </div>
+              </summary>
+              <div class="faq-a">
+                A hackathon is an event where people come together to build
+                projects, usually over a short period of time. At IKU, you'll
+                have 24 hours to work on a project with your team, attend
+                workshops and talks, and get mentorship from experienced
+                developers. There will be no malicious "hacking" :P
               </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>Who can attend IKU?</span><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                IKU is catered towards students who identify as female or
+                non-binary, from any UK university, at any experience level,
+                including complete beginners. But participants must be at least
+                18 years old and be a university student to attend.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span
+                    >If I come from a non-CS field, can I still
+                    participate?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                Absolutely! We strongly encourage students from non-Computer
+                Science backgrounds to join. We even offer a dedicated Best
+                Beginner side track for non-CS participants. To be eligible for
+                this prize, at least 50% of your team members must come from a
+                non-CS adjacent background.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>How much does it cost?</span><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                IKU is completely free to attend, including meals, snacks and
+                swag.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>Where does it take place?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                Bush House on King's College London's Strand Campus, in central
+                London.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>What is the duration of the event?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                IKU Womxn in STEM Hackathon takes place over a weekend and
+                includes 24 hours of dedicated hacking time. Participants are
+                welcome to head home overnight, stay awake throughout the event,
+                or get some rest inside the venue. We provide dedicated sleeping
+                and quiet rooms. If you plan to stay overnight, we recommend
+                bringing something comfortable, such as a pillow, blanket, or
+                hoodie.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>How do I sign up?</span><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                Registration opens closer to the event, hit "Register interest"
+                below and we'll email you the moment tickets go live.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>Do I need a team?</span><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                No, you can arrive solo and form a team on the day, or come with
+                friends. Teams are typically 2–4 people.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span
+                    >When can we start working on our projects? Can we use
+                    previous work?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                You can start working on your project as soon as the opening
+                ceremony ends. You're welcome to brainstorm ideas beforehand,
+                but all code and project work must be created during the event.
+                Existing frameworks, libraries, and tools may be used, provided
+                they are appropriately credited.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>How many tracks can I apply for?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                You can only apply for one main track, but you are welcome to
+                choose as many side tracks as you like. Please note that side
+                tracks are optional and do not affect your eligibility for
+                prizes.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>What should I bring?</span><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                Bring your laptop, charger, and any other equipment you need to
+                build your project. We also recommend bringing a water bottle,
+                snacks, and comfortable clothing. If you plan to stay overnight,
+                consider bringing a pillow, blanket, or hoodie for comfort.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <div class="faq-q-row">
+                  <span>Are there travel reimbursements available?</span
+                  ><span class="plus">+</span>
+                </div>
+              </summary>
+              <div class="faq-a">
+                Unfortunately, we are unable to provide travel reimbursements
+                for this event.
+              </div>
+            </details>
+          </div>
+        </div>
       </section>
 
       <section class="section alt-bg" id="sponsors">
@@ -1966,20 +2006,31 @@
             <span class="eyebrow">Sponsors</span>
             <h2>Backing IKU</h2>
           </div>
- 
+
           <div class="sponsor-tiers">
             <div class="tier-gold">
-              <div class="sponsor-tier-label"><span class="dot"></span>Gold sponsor</div>
+              <div class="sponsor-tier-label">
+                <span class="dot"></span>Gold sponsor
+              </div>
               <div class="sponsor-row">
                 <div class="sponsor-card">
-                  <a href="https://wise.com/" target="_blank" rel="noopener noreferrer" aria-label="Wise website">
-                    <img src="images/wise-logo-bright.png" alt="Wise" loading="lazy" />
+                  <a
+                    href="https://wise.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Wise website"
+                  >
+                    <img
+                      src="images/wise-logo-bright.png"
+                      alt="Wise"
+                      loading="lazy"
+                    />
                   </a>
                   <div class="sponsor-card-name">Wise</div>
                 </div>
               </div>
             </div>
- 
+
             <!--<div class="tier-silver">
               <div class="sponsor-tier-label"><span class="dot"></span>Silver sponsor</div>
               <div class="sponsor-row">
@@ -1992,10 +2043,18 @@
               </div>
             </div>
           </div>-->
- 
-          <div class="sponsor-cta">
-            <p>More sponsors joining soon — want to back womxn and non-binary students in tech?</p>
-            <a href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon" class="btn btn-primary">Become a sponsor</a>
+
+            <div class="sponsor-cta">
+              <p>
+                More sponsors joining soon — want to back womxn and non-binary
+                students in tech?
+              </p>
+              <a
+                href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
+                class="btn btn-primary"
+                >Become a sponsor</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -2312,7 +2371,9 @@
       document.querySelectorAll(".loc-pop").forEach((item) => {
         item.addEventListener("toggle", () => {
           if (item.open) {
-            document.querySelectorAll(".loc-pop").forEach((other) => { if (other !== item) other.open = false; });
+            document.querySelectorAll(".loc-pop").forEach((other) => {
+              if (other !== item) other.open = false;
+            });
             const body = item.querySelector(".loc-pop-body");
             const summary = item.querySelector("summary");
             const rect = summary.getBoundingClientRect();
@@ -2323,7 +2384,7 @@
             left = Math.min(left, maxLeft);
             left = Math.max(left, margin);
             body.style.left = left + "px";
-            body.style.top = (rect.bottom + 6) + "px";
+            body.style.top = rect.bottom + 6 + "px";
             body.classList.add("positioned");
           } else {
             const body = item.querySelector(".loc-pop-body");
@@ -2331,9 +2392,15 @@
           }
         });
       });
-      window.addEventListener("scroll", () => {
-        document.querySelectorAll(".loc-pop[open]").forEach((item) => { item.open = false; });
-      }, { passive: true });
+      window.addEventListener(
+        "scroll",
+        () => {
+          document.querySelectorAll(".loc-pop[open]").forEach((item) => {
+            item.open = false;
+          });
+        },
+        { passive: true },
+      );
     </script>
   </body>
 </html>
