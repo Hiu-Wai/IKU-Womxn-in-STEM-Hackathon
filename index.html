@@ -1029,7 +1029,7 @@
         border-radius: 8px;
         padding: 6px 12px;
       }
-      .sponsor-panel {
+      /*.sponsor-panel {
         border: 1px dashed var(--line);
         border-radius: var(--radius-lg);
         padding: 56px 32px;
@@ -1061,6 +1061,89 @@
         border-radius: 50%;
         background: var(--pink);
         animation: pulseDot 1.6s ease-in-out infinite;
+      }*/
+      .sponsor-tiers { 
+        display: flex; flex-direction: column; gap: 40px; 
+      }
+      .sponsor-tier-label { 
+        display: flex; align-items: center;
+        gap: 10px; 
+        font-family: var(--font-display);
+        font-weight: 700; font-size: 13px; 
+        letter-spacing: 0.08em;
+        text-transform: uppercase; 
+        margin-bottom: 18px; 
+      }
+      .sponsor-tier-label .dot { 
+        width: 10px; 
+        height: 10px; 
+        border-radius: 50%; 
+        flex: none; 
+      }
+      .tier-gold .sponsor-tier-label { 
+        color: #f0c766; 
+      }
+      .tier-gold .dot { 
+        background: linear-gradient(135deg, #f5d361, #c9922a); 
+      }
+      .tier-silver .sponsor-tier-label { 
+        color: #c7cdd6; 
+      }
+      .tier-silver .dot { 
+        background: linear-gradient(135deg, #e4e7ec, #9aa3af); 
+      }
+      .sponsor-row { 
+        display: grid; 
+        grid-template-columns: 
+        repeat(auto-fit, minmax(160px, 1fr)); 
+        gap: 16px; 
+      }
+      .sponsor-card { 
+        background: var(--ink-800); 
+        border: 1px solid var(--line); 
+        border-radius: var(--radius-md); 
+        padding: 24px 20px; display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+      }
+      .tier-gold .sponsor-card { 
+        border-color: rgba(245, 211, 97, 0.35); 
+        box-shadow: 0 16px 32px -18px rgba(245, 211, 97, 0.35); 
+        min-height: 150px; 
+      }
+      .tier-silver .sponsor-card { 
+        border-color: rgba(180, 196, 224, 0.45); 
+        box-shadow: 0 16px 32px -18px rgba(148, 162, 185, 0.4); 
+        min-height: 120px; 
+      }
+      .sponsor-card img { 
+        height: 70px; 
+        width: auto; 
+        max-width: 200px; 
+        object-fit: contain; 
+        margin: 0 auto; 
+        display: block; 
+      }
+      .tier-silver .sponsor-card img { 
+        height: 46px; 
+      }
+      .sponsor-card-name { 
+        margin-top: 12px; 
+        font-family: var(--font-display); 
+        font-weight: 700; 
+        font-size: 13px; 
+        color: #fff; 
+      }
+      .sponsor-cta { 
+        text-align: center; 
+        margin-top: 48px; 
+      }
+      .sponsor-cta p { 
+        color: var(--lilac-300); 
+        margin-bottom: 18px; 
+        font-size: 15px; 
       }
       @keyframes pulseDot {
         0%,
@@ -1718,164 +1801,164 @@
         </div>
       </section>
 
-<section class="section alt-bg" id="faq">
-        <div class="wrap">
-          <div class="section-head">
-            <span class="eyebrow">Good to know</span>
-            <h2>Frequently asked questions</h2>
-          </div>
-          <div>
-            <details class="faq-item" open>
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>What is a hackathon?</span><span class="plus">+</span>
+      <section class="section alt-bg" id="faq">
+              <div class="wrap">
+                <div class="section-head">
+                  <span class="eyebrow">Good to know</span>
+                  <h2>Frequently asked questions</h2>
                 </div>
-              </summary>
-              <div class="faq-a">
-                A hackathon is an event where people come together to build
-                projects, usually over a short period of time. At IKU, you'll
-                have 24 hours to work on a project with your team, attend
-                workshops and talks, and get mentorship from experienced
-                developers. There will be no malicious "hacking" :P
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>Who can attend IKU?</span><span class="plus">+</span>
+                <div>
+                  <details class="faq-item" open>
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>What is a hackathon?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      A hackathon is an event where people come together to build
+                      projects, usually over a short period of time. At IKU, you'll
+                      have 24 hours to work on a project with your team, attend
+                      workshops and talks, and get mentorship from experienced
+                      developers. There will be no malicious "hacking" :P
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>Who can attend IKU?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      IKU is catered towards students who identify as female or
+                      non-binary, from any UK university, at any experience level,
+                      including complete beginners. But participants must be at least 18 years old and be a university student to attend.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>If I come from a non-CS field, can I still participate?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      Absolutely! We strongly encourage students from non-Computer Science backgrounds to join. We even offer a dedicated Best Beginner side track for non-CS participants. To be eligible for this prize, at least 50% of your team members must come from a non-CS adjacent background.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>How much does it cost?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      IKU is completely free to attend, including meals, snacks and
+                      swag.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>Where does it take place?</span
+                        ><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      Bush House on King's College London's Strand Campus, in central
+                      London.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>What is the duration of the event?</span
+                        ><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      IKU Womxn in STEM Hackathon takes place over a weekend and
+                      includes 24 hours of dedicated hacking time. Participants are
+                      welcome to head home overnight, stay awake throughout the event,
+                      or get some rest inside the venue. We provide dedicated sleeping
+                      and quiet rooms. If you plan to stay overnight, we recommend
+                      bringing something comfortable, such as a pillow, blanket, or
+                      hoodie.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>How do I sign up?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      Registration opens closer to the event, hit "Register interest"
+                      below and we'll email you the moment tickets go live.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>Do I need a team?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      No, you can arrive solo and form a team on the day, or come
+                      with friends. Teams are typically 2–4 people.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span
+                          >When can we start working on our projects? Can we use
+                          previous work?</span
+                        ><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      You can start working on your project as soon as the opening
+                      ceremony ends. You're welcome to brainstorm ideas beforehand,
+                      but all code and project work must be created during the event.
+                      Existing frameworks, libraries, and tools may be used, provided
+                      they are appropriately credited.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>How many tracks can I apply for?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      You can only apply for one main track, but you are welcome to choose as many side tracks as you like. Please note that side tracks are optional and do not affect your eligibility for prizes.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>What should I bring?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      Bring your laptop, charger, and any other equipment you need to
+                      build your project. We also recommend bringing a water bottle,
+                      snacks, and comfortable clothing. If you plan to stay overnight,
+                      consider bringing a pillow, blanket, or hoodie for comfort.
+                    </div>
+                  </details>
+                  <details class="faq-item">
+                    <summary class="faq-q">
+                      <div class="faq-q-row">
+                        <span>Are there travel reimbursements available?</span><span class="plus">+</span>
+                      </div>
+                    </summary>
+                    <div class="faq-a">
+                      Unfortunately, we are unable to provide travel reimbursements for this event.
+                    </div>
+                  </details>
                 </div>
-              </summary>
-              <div class="faq-a">
-                IKU is catered towards students who identify as female or
-                non-binary, from any UK university, at any experience level,
-                including complete beginners. But participants must be at least 18 years old and be a university student to attend.
               </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>If I come from a non-CS field, can I still participate?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                Absolutely! We strongly encourage students from non-Computer Science backgrounds to join. We even offer a dedicated Best Beginner side track for non-CS participants. To be eligible for this prize, at least 50% of your team members must come from a non-CS adjacent background.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>How much does it cost?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                IKU is completely free to attend, including meals, snacks and
-                swag.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>Where does it take place?</span
-                  ><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                Bush House on King's College London's Strand Campus, in central
-                London.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>What is the duration of the event?</span
-                  ><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                IKU Womxn in STEM Hackathon takes place over a weekend and
-                includes 24 hours of dedicated hacking time. Participants are
-                welcome to head home overnight, stay awake throughout the event,
-                or get some rest inside the venue. We provide dedicated sleeping
-                and quiet rooms. If you plan to stay overnight, we recommend
-                bringing something comfortable, such as a pillow, blanket, or
-                hoodie.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>How do I sign up?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                Registration opens closer to the event, hit "Register interest"
-                below and we'll email you the moment tickets go live.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>Do I need a team?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                No, you can arrive solo and form a team on the day, or come
-                with friends. Teams are typically 2–4 people.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span
-                    >When can we start working on our projects? Can we use
-                    previous work?</span
-                  ><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                You can start working on your project as soon as the opening
-                ceremony ends. You're welcome to brainstorm ideas beforehand,
-                but all code and project work must be created during the event.
-                Existing frameworks, libraries, and tools may be used, provided
-                they are appropriately credited.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>How many tracks can I apply for?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                You can only apply for one main track, but you are welcome to choose as many side tracks as you like. Please note that side tracks are optional and do not affect your eligibility for prizes.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>What should I bring?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                Bring your laptop, charger, and any other equipment you need to
-                build your project. We also recommend bringing a water bottle,
-                snacks, and comfortable clothing. If you plan to stay overnight,
-                consider bringing a pillow, blanket, or hoodie for comfort.
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-q">
-                <div class="faq-q-row">
-                  <span>Are there travel reimbursements available?</span><span class="plus">+</span>
-                </div>
-              </summary>
-              <div class="faq-a">
-                Unfortunately, we are unable to provide travel reimbursements for this event.
-              </div>
-            </details>
-          </div>
-        </div>
-</section>
+      </section>
 
       <section class="section alt-bg" id="sponsors">
         <div class="wrap">
@@ -1883,20 +1966,36 @@
             <span class="eyebrow">Sponsors</span>
             <h2>Backing IKU</h2>
           </div>
-          <div class="sponsor-panel">
-            <span class="soon-badge">Coming soon</span>
-            <h3>Our sponsor lineup is being finalised.</h3>
-            <p>
-              We're in conversation with companies who want to back womxn and
-              non-binary students in tech. Check back closer to October for the
-              full list, or get in touch if your company wants to be part of
-              it.
-            </p>
-            <a
-              href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
-              class="btn btn-primary"
-              >Become a sponsor</a
-            >
+ 
+          <div class="sponsor-tiers">
+            <div class="tier-gold">
+              <div class="sponsor-tier-label"><span class="dot"></span>Gold sponsor</div>
+              <div class="sponsor-row">
+                <div class="sponsor-card">
+                  <a href="https://wise.com/" target="_blank" rel="noopener noreferrer" aria-label="Wise website">
+                    <img src="images/wise-logo-bright.png" alt="Wise" loading="lazy" />
+                  </a>
+                  <div class="sponsor-card-name">Wise</div>
+                </div>
+              </div>
+            </div>
+ 
+            <!--<div class="tier-silver">
+              <div class="sponsor-tier-label"><span class="dot"></span>Silver sponsor</div>
+              <div class="sponsor-row">
+                <div class="sponsor-card">
+                  <a href="https://incident.io/" target="_blank" rel="noopener noreferrer" aria-label="incident.io website">
+                    <img src="images/incidentio-logo.svg" alt="incident.io" loading="lazy" />
+                  </a>
+                  <div class="sponsor-card-name">incident.io</div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+ 
+          <div class="sponsor-cta">
+            <p>More sponsors joining soon — want to back womxn and non-binary students in tech?</p>
+            <a href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon" class="btn btn-primary">Become a sponsor</a>
           </div>
         </div>
       </section>
