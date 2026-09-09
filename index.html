@@ -1109,6 +1109,14 @@
       .tier-silver .dot {
         background: linear-gradient(135deg, #e4e7ec, #9aa3af);
       }
+
+      .tier-bronze .sponsor-tier-label {
+        color: #b5975c;
+      }
+      .tier-bronze .dot {
+        background: linear-gradient(135deg, #baa57d, #9a804e);
+      }
+
       .sponsor-row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -1135,6 +1143,11 @@
         box-shadow: 0 16px 32px -18px rgba(148, 162, 185, 0.4);
         min-height: 120px;
       }
+      .tier-bronze .sponsor-card {
+        border-color: rgba(186, 165, 125, 0.35);
+        box-shadow: 0 16px 32px -18px rgba(186, 165, 125, 0.35);
+        min-height: 120px;
+      }
       .sponsor-card img {
         height: 70px;
         width: auto;
@@ -1145,6 +1158,9 @@
       }
       .tier-silver .sponsor-card img {
         height: 46px;
+      }
+      .tier-bronze .sponsor-card img {
+        height: 43px;
       }
       .sponsor-card-name {
         margin-top: 12px;
@@ -1161,6 +1177,22 @@
         color: var(--lilac-300);
         margin-bottom: 18px;
         font-size: 15px;
+      }
+      .sponsor-tag {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 8px;
+        padding: 3px 8px;
+        border-radius: 100px;
+        border: 1px solid rgba(245, 211, 97, 0.35);
+        background: rgba(245, 211, 97, 0.08);
+        color: #f0c766;
+        font-family: var(--font-body);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        vertical-align: middle;
       }
       @keyframes pulseDot {
         0%,
@@ -1708,13 +1740,14 @@
                   <li>
                     <div class="time">16:00</div>
                     <div class="ev-row">
-                      <div class="ev">Workshop / talk</div>
+                      <div class="ev">Panel with Wise</div>
                       <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
                           Bush House, Auditorium, -1st floor
                         </div>
                       </details>
+                      <span class="sponsor-tag">Gold Sponsor</span>
                     </div>
                   </li>
                   <li>
@@ -2032,29 +2065,62 @@
             </div>
 
             <div class="tier-silver">
-              <div class="sponsor-tier-label"><span class="dot"></span>Silver sponsor</div>
+              <div class="sponsor-tier-label">
+                <span class="dot"></span>Silver sponsor
+              </div>
               <div class="sponsor-row">
                 <div class="sponsor-card">
-                  <a href="https://incident.io/" target="_blank" rel="noopener noreferrer" aria-label="incident.io website">
-                    <img src="images/incidentio-logo-light.svg" alt="incident.io" loading="lazy" />
+                  <a
+                    href="https://incident.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="incident.io website"
+                  >
+                    <img
+                      src="images/incidentio-logo-light.svg"
+                      alt="incident.io"
+                      loading="lazy"
+                    />
                   </a>
                   <div class="sponsor-card-name">incident.io</div>
                 </div>
               </div>
             </div>
+
+            <div class="tier-bronze">
+              <div class="sponsor-tier-label">
+                <span class="dot"></span>Bronze sponsor
+              </div>
+              <div class="sponsor-row">
+                <div class="sponsor-card">
+                  <a
+                    href="https://careers.db.com/students-graduates"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="DB Careers website"
+                  >
+                    <img
+                      src="images/DB-Logo.jpg"
+                      alt="Deutsche Bank"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="sponsor-card-name">Deutsche Bank</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-            <div class="sponsor-cta">
-              <p>
-                More sponsors joining soon — want to back womxn and non-binary
-                students in tech?
-              </p>
-              <a
-                href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
-                class="btn btn-primary"
-                >Become a sponsor</a
-              >
-            </div>
+          <div class="sponsor-cta">
+            <p>
+              More sponsors joining soon — want to back womxn and non-binary
+              students in tech?
+            </p>
+            <a
+              href="mailto:ikuwomxninstemhackathon@gmail.com?subject=Sponsorship%20enquiry%20-%20IKU%20Womxn%20in%20STEM%20Hackathon"
+              class="btn btn-primary"
+              >Become a sponsor</a
+            >
           </div>
         </div>
       </section>
