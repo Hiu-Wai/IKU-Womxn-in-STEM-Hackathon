@@ -990,9 +990,9 @@
       }
       .supporter-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 16px;
-        max-width: 420px;
+        max-width: 620px;
         margin: 0 auto;
       }
       @media (max-width: 560px) {
@@ -2100,7 +2100,7 @@
                     aria-label="DB Careers website"
                   >
                     <img
-                      src="images/DB-Logo.jpg"
+                      src="images/DB-Logo.svg"
                       alt="Deutsche Bank"
                       loading="lazy"
                     />
@@ -2259,6 +2259,12 @@
                 />
               </a>
               <div class="supporter-name">ElevenLabs</div>
+            </div>
+             <div class="supporter-card">
+              <a href="https://uk.rs-online.com/web/content/discovery/education/student-funding" target="_blank" rel="noopener noreferrer" aria-label="RS Student Fund website">
+                <img src="images/RSLogo-standard.jpg" alt="RS Student Fund" loading="lazy" class="supporter-logo-img" />
+              </a>
+              <div class="supporter-name">RS Student Fund</div>
             </div>
           </div>
         </div>
