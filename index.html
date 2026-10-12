@@ -1385,6 +1385,568 @@
           width: 14% !important;
         }
       }
+
+      /* ===== Venue Guide: asymmetric bento (SaaS refinement) ===== */
+
+      .venue-guide {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: var(--ink-950);
+      }
+
+      /* Ambient glow: gives the glass surfaces something to blur */
+      .venue-guide::before,
+      .venue-guide::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(100px);
+        pointer-events: none;
+      }
+      .venue-guide::before {
+        width: 560px;
+        height: 560px;
+        top: -200px;
+        left: -160px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.26),
+          transparent 70%
+        );
+      }
+      .venue-guide::after {
+        width: 480px;
+        height: 480px;
+        right: -140px;
+        bottom: -180px;
+        background: radial-gradient(
+          circle,
+          rgba(236, 72, 153, 0.16),
+          transparent 70%
+        );
+      }
+
+      .venue-guide .section-head {
+        margin-bottom: 44px;
+      }
+      .venue-guide .section-head h2 {
+        letter-spacing: -0.03em;
+      }
+      .venue-guide .section-head p {
+        color: rgba(201, 184, 255, 0.78);
+        max-width: 520px;
+      }
+
+      /* ---------- Bento grid ---------- */
+      .venue-bento {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+        gap: 20px;
+      }
+      .vb-primary {
+        grid-column: 1 / 8;
+        grid-row: 1 / 3;
+      }
+      .vb-sponsor {
+        grid-column: 8 / 13;
+        grid-row: 1;
+      }
+      .vb-facilities {
+        grid-column: 8 / 13;
+        grid-row: 2;
+      }
+
+      /* ---------- Shared glass card ----------
+   --pad drives both the card padding and the icon inset, so the
+   top-right icon always lines up with the top-left label. */
+      .vb-card {
+        --pad: 28px;
+        --mx: 50%;
+        --my: 0%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* content on top, pill pinned to bottom */
+        gap: 32px;
+        padding: var(--pad);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        backdrop-filter: blur(18px) saturate(140%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        transition:
+          transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background 0.3s ease;
+      }
+
+      /* Cursor spotlight */
+      .vb-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+          360px circle at var(--mx) var(--my),
+          rgba(139, 92, 246, 0.16),
+          transparent 65%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      /* Hover: elevate and catch a faint neon glow */
+      .vb-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.045);
+        border-color: rgba(167, 139, 250, 0.32);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.09),
+          0 0 36px rgba(139, 92, 246, 0.2),
+          0 22px 44px -22px rgba(0, 0, 0, 0.6);
+      }
+      .vb-card:hover::before {
+        opacity: 1;
+      }
+
+      @supports not (
+        (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+      ) {
+        .vb-card {
+          background: rgba(34, 16, 73, 0.85);
+        }
+      }
+
+      /* ---------- Header: label pill only (icon lives top-right) ---------- */
+      .vb-meta {
+        display: flex;
+        align-items: center;
+        min-height: 40px; /* matches icon height so the pill centres on it */
+        margin: -4px 0 18px; /* -4px compensates the icon's (pad - 4px) inset */
+      }
+
+      .vb-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 5px 11px;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(201, 184, 255, 0.85);
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .vb-label--accent {
+        color: #f9a8d4;
+        border-color: rgba(236, 72, 153, 0.28);
+      }
+      .vb-label--accent::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 8px rgba(236, 72, 153, 0.8);
+      }
+
+      /* ---------- Icon: glass container pinned top-right ---------- */
+      .vb-icon {
+        position: absolute;
+        top: calc(var(--pad) - 4px); /* 24px on standard cards */
+        right: calc(var(--pad) - 4px);
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        color: rgba(201, 184, 255, 0.9);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .vb-icon svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+      .vb-card:hover .vb-icon {
+        color: #fff;
+        border-color: rgba(167, 139, 250, 0.4);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 0 18px rgba(139, 92, 246, 0.25);
+      }
+
+      /* Inline variant: used inside the Wellbeing split cells */
+      .vb-icon--inline {
+        position: static;
+        flex: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+      .vb-icon--inline svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* ---------- Typography ---------- */
+      .vb-card h3 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.25;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: #fff;
+      }
+
+      .vb-note {
+        margin: 12px 0 0;
+        max-width: 44ch;
+        color: rgba(201, 184, 255, 0.74);
+        font-size: 14.5px;
+        line-height: 1.65;
+      }
+
+      /* Location pill: always the last flex child, so it sits on the bottom edge */
+      .vb-pill {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 100px;
+        border: 1px solid rgba(236, 72, 153, 0.28);
+        background: rgba(236, 72, 153, 0.07);
+        color: #f9a8d4;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .vb-pill::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 8px rgba(236, 72, 153, 0.8);
+      }
+
+      /* ---------- Primary card: Hacking Space ---------- */
+      .vb-primary {
+        --pad: 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 40px;
+        background:
+          radial-gradient(
+            520px 320px at 0% 0%,
+            rgba(139, 92, 246, 0.14),
+            transparent 65%
+          ),
+          rgba(255, 255, 255, 0.03);
+      }
+      .vb-primary-body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 36px;
+      }
+      .vb-primary h3 {
+        font-size: clamp(26px, 3vw, 34px);
+        letter-spacing: -0.03em;
+      }
+
+      .vb-floors {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .vb-floors-label {
+        color: rgba(201, 184, 255, 0.7);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .vb-floors-num {
+        font-family: var(--font-display);
+        font-size: clamp(60px, 8vw, 96px);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: linear-gradient(
+          120deg,
+          var(--pink),
+          var(--violet-bright) 60%,
+          var(--blue)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .vb-floors-num i {
+        font-style: normal;
+        font-size: 0.45em;
+        letter-spacing: 0;
+        -webkit-text-fill-color: rgba(201, 184, 255, 0.5);
+      }
+
+      /* ---------- Floor rail: neon bars for active floors 6 and 7 ---------- */
+      .vb-rail {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 36px; /* clears the top-right icon */
+      }
+      .vb-rail-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgba(201, 184, 255, 0.32);
+        font-size: 11px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        transition: color 0.3s ease;
+      }
+      .vb-rail-row span {
+        width: 10px;
+        text-align: right;
+      }
+      .vb-rail-row::after {
+        content: "";
+        flex: 1;
+        height: 8px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        transition:
+          box-shadow 0.3s ease,
+          filter 0.3s ease;
+      }
+      .vb-rail-row.is-on {
+        color: #f9a8d4;
+      }
+      .vb-rail-row.is-on::after {
+        background: linear-gradient(90deg, var(--violet), var(--pink));
+        border-color: transparent;
+        box-shadow: 0 0 12px rgba(236, 72, 153, 0.4); /* neon glow on floors 6 and 7 */
+      }
+      .vb-primary:hover .vb-rail-row.is-on::after {
+        box-shadow: 0 0 18px rgba(236, 72, 153, 0.65);
+      }
+
+      /* ---------- Secondary: Wellbeing split module ---------- */
+      .vb-facilities {
+        gap: 24px;
+      }
+
+      .vb-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .vb-split-cell {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 0 0;
+      }
+      .vb-split-cell + .vb-split-cell {
+        padding-left: 20px;
+        margin-left: 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .vb-split-cell strong {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.3;
+      }
+
+      /* ---------- Address bar ---------- */
+      .venue-address {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 14px 14px 14px 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        backdrop-filter: blur(18px) saturate(140%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+      .venue-address-info {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+      .venue-address-pin {
+        flex: none;
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        color: #f9a8d4;
+        background: rgba(236, 72, 153, 0.1);
+        border: 1px solid rgba(236, 72, 153, 0.25);
+      }
+      .venue-address-pin svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+      .venue-address-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 0;
+      }
+      .venue-address-text .vb-label {
+        padding: 0;
+        border: 0;
+        background: none;
+        font-size: 10px;
+      }
+      .venue-address-text address {
+        font-style: normal;
+        color: #fff;
+        font-size: 14.5px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.4;
+      }
+      .venue-address-link {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .venue-address-link svg {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.2s ease;
+      }
+      .venue-address-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(167, 139, 250, 0.45);
+        box-shadow: 0 0 24px rgba(139, 92, 246, 0.2);
+      }
+      .venue-address-link:hover svg {
+        transform: translate(2px, -2px);
+      }
+
+      /* ---------- Tablet: hero on top, two secondary cards side by side ---------- */
+      @media (max-width: 960px) {
+        .vb-primary {
+          grid-column: 1 / -1;
+          grid-row: auto;
+        }
+        .vb-sponsor {
+          grid-column: 1 / 7;
+          grid-row: auto;
+        }
+        .vb-facilities {
+          grid-column: 7 / 13;
+          grid-row: auto;
+        }
+        .vb-split {
+          grid-template-columns: 1fr;
+        }
+        .vb-split-cell + .vb-split-cell {
+          margin-left: 0;
+          padding-left: 0;
+          border-left: 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          margin-top: 18px;
+        }
+      }
+
+      /* ---------- Mobile: single linear column ---------- */
+      @media (max-width: 640px) {
+        .venue-bento {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .vb-primary,
+        .vb-sponsor,
+        .vb-facilities {
+          grid-column: 1 / -1;
+        }
+
+        .venue-bento .vb-card {
+          --pad: 24px;
+          gap: 26px;
+        } /* beats the per-card --pad */
+
+        .vb-primary {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .vb-rail {
+          padding-top: 0;
+          gap: 7px;
+        }
+
+        .vb-card:hover {
+          transform: none;
+        } /* no sticky lift on touch */
+
+        .venue-address {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 16px;
+        }
+        .venue-address-link {
+          justify-content: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .vb-card:hover {
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1747,7 +2309,10 @@
                   <li>
                     <div class="time">14:00</div>
                     <div class="ev-row">
-                      <div class="ev">Talk with incident.io: "Working at a Series B tech startup"</div>
+                      <div class="ev">
+                        Talk with incident.io: "Working at a Series B tech
+                        startup"
+                      </div>
                       <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
                         <div class="loc-pop-body">
@@ -2324,6 +2889,206 @@
         </div>
       </section>
 
+      <!-- ===== Venue Guide (asymmetric bento, SVG icons) ===== -->
+      <section class="section venue-guide" id="venue-guide">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">On the day</span>
+            <h2>Venue Guide</h2>
+            <p>
+              Find your way around Bush House. Save these locations for quick
+              reference during the hackathon.
+            </p>
+          </div>
+
+          <div class="venue-bento">
+            <!-- PRIMARY: Hacking Space -->
+            <article class="vb-card vb-primary">
+              <!-- Icon pinned top-right (laptop) -->
+              <span class="vb-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-laptop preview-icon"
+                >
+                  <path
+                    d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"
+                  />
+                  <path d="M20.054 15.987H3.946" />
+                </svg>
+              </span>
+
+              <div class="vb-primary-body">
+                <div>
+                  <div class="vb-meta">
+                    <span class="vb-label vb-label--accent">Main space</span>
+                  </div>
+                  <h3>Hacking Space</h3>
+                  <p class="vb-note">
+                    Your main space for building, coding and collaborating.
+                  </p>
+                </div>
+
+                <div class="vb-floors">
+                  <span class="vb-floors-label">Floors</span>
+                  <span class="vb-floors-num">6 <i>&amp;</i> 7</span>
+                </div>
+
+                <span class="vb-pill">Bush House (S)</span>
+              </div>
+
+              <!-- Decorative floor rail: floors 6 and 7 glow -->
+              <div class="vb-rail" aria-hidden="true">
+                <div class="vb-rail-row is-on"><span>7</span></div>
+                <div class="vb-rail-row is-on"><span>6</span></div>
+                <div class="vb-rail-row"><span>5</span></div>
+                <div class="vb-rail-row"><span>4</span></div>
+                <div class="vb-rail-row"><span>3</span></div>
+                <div class="vb-rail-row"><span>2</span></div>
+                <div class="vb-rail-row"><span>1</span></div>
+                <div class="vb-rail-row"><span>0</span></div>
+              </div>
+            </article>
+
+            <!-- SECONDARY: Sponsor & Partner Space -->
+            <article class="vb-card vb-sponsor">
+              <!-- Icon pinned top-right (people) -->
+              <span class="vb-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="10" cy="8" r="3.5" />
+                  <path
+                    d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"
+                  />
+                  <path d="M15.5 4.65a3.5 3.5 0 0 1 0 6.7" />
+                  <path d="M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35" />
+                </svg>
+              </span>
+
+              <div>
+                <div class="vb-meta">
+                  <span class="vb-label">Room</span>
+                </div>
+                <h3>Sponsor &amp; Partner Space</h3>
+                <p class="vb-note">Meet our sponsors and partners here.</p>
+              </div>
+              <span class="vb-pill">Bush House (S) 2.03</span>
+            </article>
+
+            <!-- SECONDARY: Wellbeing module (Prayer + Shower share one location) -->
+            <article class="vb-card vb-facilities">
+              <div>
+                <div class="vb-meta">
+                  <span class="vb-label">Location</span>
+                </div>
+                <h3>Wellbeing Spaces</h3>
+
+                <div class="vb-split">
+                  <div class="vb-split-cell">
+                    <!-- Prayer Room (neutral sparkle mark) -->
+                    <span class="vb-icon vb-icon--inline" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"
+                        />
+                        <path d="M18.5 16.5v3M17 18h3" />
+                      </svg>
+                    </span>
+                    <strong>Prayer Room</strong>
+                  </div>
+                  <div class="vb-split-cell">
+                    <!-- Shower Room (shower head) -->
+                    <span class="vb-icon vb-icon--inline" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 3v2" />
+                        <path d="M5 12a7 7 0 0 1 14 0z" />
+                        <path d="M8.5 16v2M12 16v4M15.5 16v2" />
+                      </svg>
+                    </span>
+                    <strong>Shower Room</strong>
+                  </div>
+                </div>
+              </div>
+              <span class="vb-pill">NE Block · Floors 0 &amp; 1</span>
+            </article>
+          </div>
+
+          <!-- Full-width address bar -->
+          <!--<div class="venue-address">
+            <div class="venue-address-info">
+              <span class="venue-address-pin" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21z"
+                  />
+                  <circle cx="12" cy="9.8" r="2.5" />
+                </svg>
+              </span>
+              <div class="venue-address-text">
+                <span class="vb-label">Venue</span>
+                <address>
+                  Bush House, North Wing, King's College London, 30 Aldwych,
+                  London WC2B 4BG
+                </address>
+              </div>
+            </div>
+            <a
+              class="venue-address-link"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Bush+House+North+Wing+30+Aldwych+London+WC2B+4BG"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open in Google Maps
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 17L17 7M8 7h9v9" />
+              </svg>
+            </a>
+          </div>-->
+        </div>
+      </section>
+      <!-- ===== End Venue Guide ===== -->
       <section class="section" id="location">
         <div class="wrap location-grid">
           <div>
@@ -2527,6 +3292,14 @@
         },
         { passive: true },
       );
+      /* Venue cards: feed cursor position to the CSS spotlight */
+      document.querySelectorAll(".vb-card").forEach((card) => {
+        card.addEventListener("pointermove", (e) => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty("--mx", e.clientX - r.left + "px");
+          card.style.setProperty("--my", e.clientY - r.top + "px");
+        });
+      });
     </script>
   </body>
 </html>
