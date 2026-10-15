@@ -1947,6 +1947,32 @@
           transform: none;
         }
       }
+      .btn svg,
+      .nav-cta svg {
+        width: 18px;
+        height: 18px;
+        flex: none;
+      }
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      /* Devpost button before submissions open */
+      .btn.is-soon {
+        opacity: 0.55;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      .btn .soon-tag {
+        font-size: 10px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 2px 8px;
+        border-radius: 100px;
+        border: 1px solid var(--line);
+        color: var(--lilac-300);
+      }
     </style>
   </head>
   <body>
@@ -1990,7 +2016,15 @@
           <li><a href="#supporters">Supporters</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
-        <a href="https://luma.com/zo6qsl13" class="nav-cta">Register now</a>
+        <a
+          href="https://discord.gg/NuR2tShWK"
+          class="nav-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- Discord svg -->
+          Join Discord
+        </a>
         <button class="nav-toggle" id="menuOpen" aria-label="Open menu">
           ☰
         </button>
@@ -2032,10 +2066,24 @@
               societies.
             </p>
             <div class="hero-actions">
-              <a href="https://luma.com/zo6qsl13" class="btn btn-primary"
-                >Register now</a
+              <a
+                href="https://discord.gg/NuR2tShWK"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-              <a href="#about" class="btn btn-ghost">What is IKU?</a>
+                <!-- Discord svg -->
+                Join our Discord
+              </a>
+              <a
+                class="btn btn-ghost is-soon"
+                aria-disabled="true"
+                tabindex="-1"
+              >
+                <!-- Devpost svg -->
+                Submit on Devpost
+                <span class="soon-tag">Opens Sat</span>
+              </a>
             </div>
             <div class="hero-meta">
               <div class="meta-item">
@@ -2328,9 +2376,7 @@
                       <div class="ev">Bracelet Making Social</div>
                       <details class="loc-pop">
                         <summary aria-label="Show location">📍</summary>
-                        <div class="loc-pop-body">
-                          Bush House (S) 2.06
-                        </div>
+                        <div class="loc-pop-body">Bush House (S) 2.06</div>
                       </details>
                     </div>
                   </li>
@@ -2373,15 +2419,15 @@
                   </li>
                   <li>
                     <div class="time">20:00</div>
-                    <div class = "ev-row">
-                    <div class="ev">Hackathons UK Mini Event: Cup stacking</div>
-                     <details class="loc-pop">
-                        <summary aria-label="Show location">📍</summary>
-                        <div class="loc-pop-body">
-                          Bush House (S) 2.06
-                        </div>
-                      </details>
+                    <div class="ev-row">
+                      <div class="ev">
+                        Hackathons UK Mini Event: Cup stacking
                       </div>
+                      <details class="loc-pop">
+                        <summary aria-label="Show location">📍</summary>
+                        <div class="loc-pop-body">Bush House (S) 2.06</div>
+                      </details>
+                    </div>
                   </li>
                   <li>
                     <div class="time">20:30</div>
@@ -2415,6 +2461,12 @@
                           Bush House, Auditorium, -1st floor
                         </div>
                       </details>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="time">23:00</div>
+                    <div class="ev-row">
+                      <div class="ev">Devpost draft deadline: must select tracks</div>
                     </div>
                   </li>
                 </ul>
@@ -3138,16 +3190,36 @@
       <section id="register">
         <div class="cta-band">
           <span class="eyebrow" style="justify-content: center"
-            >Registration is now open</span
+            >Registration is now closed</span
           >
-          <h2>Register Now</h2>
+          <h2>See you at Bush House</h2>
           <p>
-            Registration is now live! Secure your place and join us for the IKU
-            Womxn in STEM Hackathon 2026.
+            Registration has closed. Registered hackers: join our Discord for
+            updates, and submit your project on Devpost before the 12:00
+            deadline on Sunday.
           </p>
-          <a href="https://luma.com/zo6qsl13" class="btn btn-primary"
-            >Register now</a
+          <div
+            style="
+              display: flex;
+              gap: 14px;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
           >
+            <a
+              href="https://discord.gg/NuR2tShWK"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <!-- Discord svg -->
+              Join our Discord
+            </a>
+            <a class="btn btn-ghost is-soon" aria-disabled="true" tabindex="-1">
+              <!-- Devpost svg -->
+              Devpost opens Saturday
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -3204,6 +3276,42 @@
                 </svg>
                 Instagram
               </a>
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/NuR2tShWK"
+                class="footer-social"
+                aria-label="IKU on Discord"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-discord"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                  />
+                </svg>
+                Discord
+              </a>
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6.002 1.61L0 12.004L6.002 22.39h11.996L24 12.004L17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31c0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861c.009-2.569-1.096-3.853-3.767-3.853z"
+                />
+              </svg>
+              Devpost
             </li>
           </ul>
         </div>
